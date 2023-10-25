@@ -38,7 +38,6 @@ h1 {
 
 .left-settings {
   width: 200px;
-
   background: #e9dac1;
   display: flex;
   flex-direction: column;
@@ -49,11 +48,23 @@ h1 {
   padding: 10px;
 }
 
-.right {
-  width: 45%;
-  height: 70%;
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+#grid {
+  width: 40%;
+  height: 60%;
   background: black;
-  border-radius: 10px;
+  display: grid;
+}
+
+.cell {
+  border: 1px solid gray;
+  min-width: 10px;
+  min-height: 20px;
+  display: inline-block;
 }
 
 button,
@@ -81,13 +92,12 @@ button:active {
 }
 
 input[type="color"] {
- display: block;
+  display: block;
   width: 100%;
   height: 50px;
   border: none;
   outline: none;
   padding: 0;
-
 }
 
 #sizeSlider {
