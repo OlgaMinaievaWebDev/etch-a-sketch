@@ -4,27 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <title>Etch-a-Sketch</title>
+    <title>Document</title>
   </head>
   <body>
-<h1>Etch-a-Sketch</h1>
-<div class="container">
- <div class="left-settings">
-  <input type="color" id="color" value="#333333">
-  <button id="colorBtn">Color</button>
-  <button id="rainbowBtn">Rainbow</button>
-  <button id="eraseBtn">Erase</button>
-  <button id="clearBtn">Clear</button>
-  <input type="range" id="sizeSlider">
- </div>
- <div id="grid"></div>
-</div>
-<footer>
- <p>Copyright © 2023 Olga Minaieva
-</p>
-</footer>
+    <div class="flex-container">
+      <div class="title">
+        <h1>Sketch a Etch</h1>
+      </div>
+      <div class="content">
+        <div class="board"></div>
+        <div class="buttons">
+          <button>Black</button>
+          <button>White</button>
+          <button>Random</button>
+          <button>reset</button>
+        </div>
+        <div>
+          <input type="text" placeholder="Size of board" value="10" />
+          <button id="size">Set Size</button>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
   </body>
 </html>

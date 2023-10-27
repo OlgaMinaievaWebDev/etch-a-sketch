@@ -1,15 +1,13 @@
-const grid = document.getElementById("grid");
-const size = { rows: 5, cols: 8 };
-const total = size.rows * size.cols;
+function populateBoard(size) {
+  let board = document.querySelector(".board");
+  board.style.gridTemplateColumns = `repeat(${size},1fr)`;
+  board.style.gridTemplateRow = `repeat(${size}, 1fr)`;
 
-makeDivs(total);
-
-function makeDivs(tot) {
-  for (let i = 0; i < total; i++) {
-    const cell = document.createElement("div");
-    grid.append(cell).className = "cell";
-   cell.textContent = `${i + 1}`;
+  for (let i = 0; i < size * size; i++) {
+    let square = document.createElement("div");
+    square.style.background = "blue";
+    board.appendChild(square);
   }
 }
 
-
+populateBoard(8);
