@@ -1,6 +1,18 @@
 let color = "black";
+
+let click = false;
+
 document.addEventListener("DOMContentLoaded", function () {
   populateBoard(16);
+
+  document.querySelector("body").addEventListener("click", function (e) {
+    if (e.target.tagName != "BUTTON") {
+      click = !click;
+    }
+    if (click) {
+    } else {
+    }
+  });
 
   let sizeBtn = document.getElementById("size");
   sizeBtn.addEventListener("click", function () {
@@ -38,10 +50,12 @@ function boardSize() {
 }
 
 function changeColor() {
-  if (color == "random") {
-    this.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`;
-  }  else {
-    this.style.backgroundColor = "black";
+  if (click) {
+    if (color == "random") {
+      this.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`;
+    } else {
+      this.style.backgroundColor = "black";
+    }
   }
 }
 
