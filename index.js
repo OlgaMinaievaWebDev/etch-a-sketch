@@ -1,3 +1,4 @@
+let color = "black";
 document.addEventListener("DOMContentLoaded", function () {
   populateBoard(16);
 
@@ -18,7 +19,7 @@ function populateBoard(size) {
 
   for (let i = 0; i < numDivs; i++) {
     let div = document.createElement("div");
-    div.style.backgroundColor = "grey";
+    div.addEventListener("mouseover", changeColor);
     board.insertAdjacentElement("beforeend", div);
   }
 }
@@ -34,4 +35,18 @@ function boardSize() {
     message.textContent = "Start drawing!";
     return userInput;
   }
+}
+
+function changeColor() {
+  if (color == "random") {
+    this.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`;
+  } else if (color == "white") {
+    this.style.backgroundColor = "white";
+  } else {
+    this.style.backgroundColor = "black";
+  }
+}
+
+function setColor(colorPick) {
+  color = colorPick;
 }
